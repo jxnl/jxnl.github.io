@@ -1,11 +1,293 @@
 <!DOCTYPE html>
-<meta charset="utf-8" />
-<title>Redirecting to Jason's Homepage</title>
-<meta
-  http-equiv="refresh"
-  content="0; URL=https://jxnl.notion.site/jxnl/whats-up-95708748a05d40c398a4abc66a978a8e"
-/>
-<link
-  rel="canonical"
-  href="https://jxnl.notion.site/jxnl/whats-up-95708748a05d40c398a4abc66a978a8e"
-/>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patrick Bateman's Business Card - 3D Flip</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&display=swap');
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #1E1710;
+  perspective: 1000px;
+}
+.card-container {
+  width: 510px;
+  height: 290px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+  cursor: pointer;
+  animation: slideIn 1s ease-out;
+  transform-origin: center center;
+}
+.card-container.flipped {
+  transform: translate(-50%, -50%) rotateY(180deg);
+}
+.card-face {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  background-color: #F4F2E9;
+  background-image: 
+    linear-gradient(145deg, rgba(255,255,255,0.5) 0%, rgba(0,0,0,0) 100%),
+    url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEWFhYWDg4N3d3dtbW17e3t1dXWBgYGHh4d5eXlzc3OLi4ubm5uVlZWPj4+NjY19fX2JiYl/f39ra2uRkZGZmZlpaWmXl5dvb29xcXGTk5NnZ2c8TV1mAAAAG3RSTlNAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEAvEOwtAAAFVklEQVR4XpWWB67c2BUFb3g557T/hRo9/WUMZHlgr4Bg8Z4qQgQJlHI4A8SzFVrapvmTF9O7dmYRFZ60YiBhJRCgh1FYhiLAmdvX0CzTOpNE77ME0Zty/nWWzchDtiqrmQDeuv3powQ5ta2eN0FY0InkqDD73lT9c9lEzwUNqgFHs9VQce3TVClFCQrSTfOiYkVJQBmpbq2L6iZavPnAPcoU0dSw0SUTqz/GtrGuXfbyyBniKykOWQWGqwwMA7QiYAxi+IlPdqo+hYHnUt5ZPfnsHJyNiDtnpJyayNBkF6cWoYGAMY92U2hXHF/C1M8uP/ZtYdiuj26UdAdQQSXQErwSOMzt/XWRWAz5GuSBIkwG1H3FabJ2OsUOUhGC6tK4EMtJO0ttC6IBD3kM0ve0tJwMdSfjZo+EEISaeTr9P3wYrGjXqyC1krcKdhMpxEnt5JetoulscpyzhXN5FRpuPHvbeQaKxFAEB6EN+cYN6xD7RYGpXpNndMmZgM5Dcs3YSNFDHUo2LGfZuukSWyUYirJAdYbF3MfqEKmjM+I2EfhA94iG3L7uKrR+GdWD73ydlIB+6hgref1QTlmgmbM3/LeX5GI1Ux1RWpgxpLuZ2+I+IjzZ8wqE4nilvQdkUdfhzI5QDWy+kw5Wgg2pGpeEVeCCA7b85BO3F9DzxB3cdqvBzWcmzbyMiqhzuYqtHRVG2y4x+KOlnyqla8AoWWpuBoYRxzXrfKuILl6SfiWCbjxoZJUaCBj1CjH7GIaDbc9kqBY3W/Rgjda1iqQcOJu2WW+76pZC9QG7M00dffe9hNnseupFL53r8F7YHSwJWUKP2q+k7RdsxyOB11n0xtOvnW4irMMFNV4H0uqwS5ExsmP9AxbDTc9JwgneAT5vTiUSm1E7BSflSt3bfa1tv8Di3R8n3Af7MNWzs49hmauE2wP+ttrq+AsWpFG2awvsuOqbipWHgtuvuaAE+A1Z/7gC9hesnr+7wqCwG8c5yAg3AL1fm8T9AZtp/bbJGwl1pNrE7RuOX7PeMRUERVaPpEs+yqeoSmuOlokqw49pgomjLeh7icHNlG19yjs6XXOMedYm5xH2YxpV2tc0Ro2jJfxC50ApuxGob7lMsxfTbeUv07TyYxpeLucEH1gNd4IKH2LAg5TdVhlCafZvpskfncCfx8pOhJzd76bJWeYFnFciwcYfubRc12Ip/ppIhA1/mSZ/RxjFDrJC5xifFjJpY2Xl5zXdguFqYyTR1zSp1Y9p+tktDYYSNflcxI0iyO4TPBdlRcpeqjK/piF5bklq77VSEaA+z8qmJTFzIWiitbnzR794USKBUaT0NTEsVjZqLaFVqJoPN9ODG70IPbfBHKK+/q/AWR0tJzYHRULOa4MP+W/HfGadZUbfw177G7j/OGbIs8TahLyynl4X4RinF793Oz+BU0saXtUHrVBFT/DnA3ctNPoGbs4hRIjTok8i+algT1lTHi4SxFvONKNrgQFAq2/gFnWMXgwffgYMJpiKYkmW3tTg3ZQ9Jq+f8XN+A5eeUKHWvJWJ2sgJ1Sop+wwhqFVijqWaJhwtD8MNlSBeWNNWTa5Z5kPZw5+LbVT99wqTdx29lMUH4OIG/D86ruKEauBjvH5xy6um/Sfj7ei6UUVk4AIl3MyD4MSSTOFgSwsH/QJWaQ5as7ZcmgBZkzjjU1UrQ74ci1gWBCSGHtuV1H2mhSnO3Wp/3fEV5a+4wz//6qy8JxjZsmxxy5+4w9CDNJY09T072iKG0EnOS0arEYgXqYnXcYHwjTtUNAcMelOd4xpkoqiTYICWFq0JSiPfPDQdnt+4/wuqcXY47QILbgAAAABJRU5ErkJggg==');
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  padding: 28px 20px 20px 20px;
+  box-sizing: border-box;
+  font-family: 'EB Garamond', serif;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+}
+.card-back {
+  transform: rotateY(180deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  text-align: center;
+}
+.card-face > div {
+  position: absolute;
+  color: #444;
+}
+.embossed-text {
+  text-shadow: 
+    1px 1px 1px rgba(255,255,255,0.5),
+    -1px -1px 1px rgba(0,0,0,0.2),
+    0px 2px 2px rgba(0,0,0,0.15);
+  transition: text-shadow 0.3s ease;
+}
+.small-caps {
+  font-variant: small-caps;
+}
+.old-style-nums {
+  font-feature-settings: "onum";
+  font-variant-numeric: oldstyle-nums;
+}
+.phone {
+  top: 40px;
+  left: 20px;
+  font-size: 14px;
+}
+.company {
+  top: 40px;
+  right: 20px;
+  text-align: right;
+}
+.company-name {
+  font-size: 19.2px;
+  font-weight: 500;
+}
+.department {
+  font-size: 11.2px;
+  margin-top: 0px;
+  letter-spacing: 0.5px;
+}
+.name-title {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  line-height: 1;
+}
+.name {
+  font-size: 22.4px;
+  font-weight: 500;
+  margin-bottom: 2px;
+  letter-spacing: 1px;
+}
+.first-name {
+  font-variant: small-caps;
+}
+.last-name {
+  text-transform: uppercase;
+}
+.title {
+  font-size: 18px;
+  margin-top: 0;
+}
+.address-fax-telex {
+  bottom: 20px;
+  left: 20px;
+  font-size: 13.2px;
+  width: 100%;
+  text-align: left;
+}
+@media (max-width: 600px) {
+  .card-container {
+    width: 90%;
+    height: auto;
+    aspect-ratio: 510 / 290;
+  }
+}
+@keyframes slideIn {
+  from {
+    transform: translate(-50%, -150vh);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+}
+
+.watermark {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.4);
+  text-align: center;
+  z-index: 1000;
+}
+
+.watermark a {
+  color: inherit;
+  text-decoration: none;
+}
+</style>
+</head>
+<body>
+<div class="card-container" tabindex="0" role="button" aria-label="Patrick Bateman's Business Card. Click to flip.">
+  <div class="card-face card-front">
+    <div class="phone embossed-text old-style-nums" id="phone"></div>
+    <div class="company">
+      <div class="company-name embossed-text small-caps" id="company-name"></div>
+      <div class="department embossed-text small-caps" id="department"></div>
+    </div>
+    <div class="name-title">
+      <div class="name embossed-text">
+        <span class="first-name" id="first-name"></span> <span class="last-name" id="last-name"></span>
+      </div>
+      <div class="title embossed-text small-caps" id="title"></div>
+    </div>
+    <div class="address-fax-telex embossed-text old-style-nums small-caps" id="address-fax-telex"></div>
+  </div>
+  <div class="card-face card-back">
+    <p class="embossed-text" id="back-quote"></p>
+  </div>
+</div>
+<div class="watermark">
+  <a href="https://x.com/jxnlco" target="_blank" rel="noopener noreferrer">Made by Jason Liu w/ Cursor** and Claude</a>
+</div>
+<script>
+const cardData = {
+  phone: "212 555 6342",
+  company: {
+    name: "Pierce & Pierce",
+    department: "Mergers and Acquisitions"
+  },
+  person: {
+    firstName: "Patrick",
+    lastName: "BATEMAN",
+    title: "Vice President"
+  },
+  address: {
+    street: "358 Exchange Place",
+    city: "New York",
+    state: "N.Y.",
+    zip: "10099"
+  },
+  fax: "212 555 6390",
+  telex: "10 4534",
+  backQuote: "\"Let's see Karpathy's card.\""
+};
+
+// Function to populate the card with data
+function populateCard() {
+  document.getElementById('phone').textContent = cardData.phone;
+  document.getElementById('company-name').textContent = cardData.company.name;
+  document.getElementById('department').textContent = cardData.company.department;
+  document.getElementById('first-name').textContent = cardData.person.firstName;
+  document.getElementById('last-name').textContent = cardData.person.lastName;
+  document.getElementById('title').textContent = cardData.person.title;
+  document.getElementById('address-fax-telex').textContent = 
+    `${cardData.address.street} ${cardData.address.city}, ${cardData.address.state} ${cardData.address.zip} FAX ${cardData.fax} TELEX ${cardData.telex}`;
+  document.getElementById('back-quote').textContent = cardData.backQuote;
+}
+
+// Call the function to populate the card
+populateCard();
+
+const cardContainer = document.querySelector('.card-container');
+const cardFront = document.querySelector('.card-front');
+const embossedElements = document.querySelectorAll('.embossed-text');
+
+let isAnimating = false;
+
+function updateCardPosition(x, y) {
+  if (cardContainer.classList.contains('flipped') || isAnimating) return;
+  
+  const cardRect = cardFront.getBoundingClientRect();
+  const centerX = cardRect.left + cardRect.width / 2;
+  const centerY = cardRect.top + cardRect.height / 2;
+  const rotateY = (x - centerX) / 40;
+  const rotateX = (centerY - y) / 40;
+  
+  requestAnimationFrame(() => {
+    cardFront.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    cardFront.style.boxShadow = `
+      ${-rotateY}px ${rotateX}px 30px rgba(0, 0, 0, 0.3),
+      0 10px 30px rgba(0, 0, 0, 0.3)
+    `;
+    updateEmbossEffect(rotateX, rotateY);
+  });
+}
+
+function updateEmbossEffect(rotateX, rotateY) {
+  const maxEmboss = 1.5;
+  const embossX = (rotateY / 40) * maxEmboss;
+  const embossY = (-rotateX / 40) * maxEmboss;
+  
+  embossedElements.forEach(el => {
+    el.style.textShadow = `
+      ${1 + embossX}px ${1 + embossY}px 1px rgba(255,255,255,0.5),
+      ${-1 - embossX}px ${-1 - embossY}px 1px rgba(0,0,0,0.2),
+      ${embossX}px ${2 + embossY}px 2px rgba(0,0,0,0.15)
+    `;
+  });
+}
+
+document.addEventListener('mousemove', (e) => {
+  updateCardPosition(e.clientX, e.clientY);
+});
+
+cardContainer.addEventListener('mouseenter', () => {
+  cardFront.style.transition = 'none';
+});
+
+cardContainer.addEventListener('mouseleave', () => {
+  if (!cardContainer.classList.contains('flipped')) {
+    cardFront.style.transition = 'transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.5s ease';
+    cardFront.style.transform = 'rotateX(0) rotateY(0)';
+    cardFront.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.3)';
+    embossedElements.forEach(el => {
+      el.style.textShadow = '1px 1px 1px rgba(255,255,255,0.5), -1px -1px 1px rgba(0,0,0,0.2), 0px 2px 2px rgba(0,0,0,0.15)';
+    });
+  }
+});
+
+function flipCard() {
+  if (isAnimating) return;
+  isAnimating = true;
+  
+  cardContainer.classList.toggle('flipped');
+  setTimeout(() => {
+    isAnimating = false;
+  }, 800);
+}
+
+cardContainer.addEventListener('click', flipCard);
+</script>
+</body>
+</html>
