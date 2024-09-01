@@ -76,6 +76,12 @@ body {
   top: 40px;
   left: 20px;
   font-size: 14px;
+  text-decoration: none;
+  color: #444;
+  transition: text-shadow 0.3s ease;
+}
+.phone:hover {
+  animation: flicker 0.5s infinite alternate;
 }
 .company {
   top: 40px;
@@ -155,12 +161,43 @@ body {
   color: inherit;
   text-decoration: none;
 }
+
+.card-back {
+  flex-direction: column;
+}
+
+#back-quote {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #444;
+  text-decoration: none;
+  transition: text-shadow 0.3s ease;
+}
+
+#back-quote:hover {
+  animation: flicker 0.5s infinite alternate;
+}
+
+@keyframes flicker {
+  0% {
+    text-shadow: 
+      1px 1px 1px rgba(255,255,255,0.5),
+      -1px -1px 1px rgba(0,0,0,0.2),
+      0px 2px 2px rgba(0,0,0,0.15);
+  }
+  100% {
+    text-shadow: 
+      1.5px 1.5px 1.5px rgba(255,255,255,0.6),
+      -1.5px -1.5px 1.5px rgba(0,0,0,0.3),
+      0px 3px 3px rgba(0,0,0,0.2);
+  }
+}
 </style>
 </head>
 <body>
 <div class="card-container" tabindex="0" role="button" aria-label="Patrick Bateman's Business Card. Click to flip.">
   <div class="card-face card-front">
-    <div class="phone embossed-text old-style-nums" id="phone"></div>
+    <a href="mailto:work+card@jxnl.co" class="phone embossed-text old-style-nums" id="phone"></a>
     <div class="company">
       <div class="company-name embossed-text small-caps" id="company-name"></div>
       <div class="department embossed-text small-caps" id="department"></div>
@@ -174,7 +211,7 @@ body {
     <div class="address-fax-telex embossed-text old-style-nums small-caps" id="address-fax-telex"></div>
   </div>
   <div class="card-face card-back">
-    <p class="embossed-text" id="back-quote"></p>
+    <a href="https://jxnl.co/services" target="_blank" rel="noopener noreferrer" class="embossed-text" id="back-quote"></a>
   </div>
 </div>
 <div class="watermark">
@@ -184,12 +221,12 @@ body {
 const cardData = {
   phone: "212 555 6342",
   company: {
-    name: "Pierce & Pierce",
-    department: "Mergers and Acquisitions"
+    name: "FIVESIXSEVEN LLC",
+    department: "CONSULTING SERVICES"
   },
   person: {
-    firstName: "Patrick",
-    lastName: "BATEMAN",
+    firstName: "Jason 'Instructor'",
+    lastName: "LIU",
     title: "Vice President"
   },
   address: {
@@ -200,12 +237,15 @@ const cardData = {
   },
   fax: "212 555 6390",
   telex: "10 4534",
-  backQuote: "\"Let's see Karpathy's card.\""
+  backQuote: "Want to go from RAGS to Riches?"
 };
 
 // Function to populate the card with data
 function populateCard() {
-  document.getElementById('phone').textContent = cardData.phone;
+  const phoneElement = document.getElementById('phone');
+  phoneElement.textContent = cardData.phone;
+  phoneElement.href = "mailto:work+card@jxnl.co";
+  
   document.getElementById('company-name').textContent = cardData.company.name;
   document.getElementById('department').textContent = cardData.company.department;
   document.getElementById('first-name').textContent = cardData.person.firstName;
@@ -214,6 +254,7 @@ function populateCard() {
   document.getElementById('address-fax-telex').textContent = 
     `${cardData.address.street} ${cardData.address.city}, ${cardData.address.state} ${cardData.address.zip} FAX ${cardData.fax} TELEX ${cardData.telex}`;
   document.getElementById('back-quote').textContent = cardData.backQuote;
+  document.getElementById('back-quote').href = "https://jxnl.co/services";
 }
 
 // Call the function to populate the card
